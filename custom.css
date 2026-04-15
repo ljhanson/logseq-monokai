@@ -160,8 +160,25 @@ body {
 }
 
 /* Styling CodeMirror */
-html[data-theme="dark"] .cm-s-lsradix.CodeMirror {
-  font-family: "FiraCode Nerd Font", "Fira Code", monospace;
+html[data-theme="dark"] .cm-s-lsradix.CodeMirror,
+html[data-theme="dark"] .cm-s-lsradix.CodeMirror *,
+html[data-theme="dark"] .cm-editor,
+html[data-theme="dark"] .cm-editor *,
+html[data-theme="dark"] pre,
+html[data-theme="dark"] code,
+html[data-theme="dark"] .ls-page-inline-code,
+html[data-theme="dark"] .ls-page-inline-code *,
+html[data-theme="dark"] .code,
+html[data-theme="dark"] .code * {
+  font-family: "FiraCode Nerd Font", "Fira Code", monospace !important;
+  font-feature-settings: "liga" 1, "calt" 1 !important;
+  font-variant-ligatures: common-ligatures discretionary-ligatures contextual !important;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+html[data-theme="dark"] .cm-s-lsradix.CodeMirror,
+html[data-theme="dark"] .cm-editor {
   background: var(--bg-alt);
   box-shadow: none;
   -webkit-box-shadow: none;
