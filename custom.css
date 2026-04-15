@@ -1,4 +1,28 @@
-@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+@import "https://www.nerdfonts.com/assets/css/webfont.css";
+
+@font-face {
+  font-family: 'FiraCode Nerd Font';
+  src: url('https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/FiraCode/Regular/FiraCodeNerdFont-Regular.otf') format('opentype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'FiraCode Nerd Font';
+  src: url('https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/FiraCode/Light/FiraCodeNerdFont-Light.otf') format('opentype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'FiraCode Nerd Font';
+  src: url('https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/FiraCode/Medium/FiraCodeNerdFont-Medium.otf') format('opentype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'FiraCode Nerd Font';
+  src: url('https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/FiraCode/Bold/FiraCodeNerdFont-Bold.otf') format('opentype');
+  font-weight: 700;
+}
 
 :root {
   --bg: #2d2a2e;
@@ -41,7 +65,8 @@
   --ls-tag-text-hover-opacity: 0.8;
   --ls-page-text-size: 16px;
   --ls-page-title-size: 36px;
-  --ls-font-family: "Fira Sans";
+  --ls-font-family: "FiraCode Nerd Font", monospace;
+  --ls-code-font-family: "FiraCode Nerd Font";
   --ls-font-weight: 300;
   --ls-font-letter-spacing: 0.002em;
   --ls-font-line-height: 1.5;
@@ -129,6 +154,8 @@ body {
   letter-spacing: var(--ls-font-letter-spacing);
   line-height: var(--ls-font-line-height);
   font-size: var(--ls-page-text-size);
+  font-feature-settings: "liga" 1, "calt" 1;
+  font-variant-ligatures: common-ligatures discretionary-ligatures contextual;
 }
 
 .page-reference .bracket {
@@ -175,139 +202,4 @@ html[data-theme="dark"] a.block-marker:hover {
 
 html[data-theme="dark"] :not(pre):not(mark) > code {
   padding: 0 !important;
-}
-
-/* Styling CodeMirror */
-
-html[data-theme="dark"] .cm-s-lsradix.CodeMirror {
-  font-family: "FiraCode Nerd Font", "Fira Code", monospace;
-  background: var(--bg-alt);
-  box-shadow: none;
-  -webkit-box-shadow: none;
-  text-shadow: none;
-  color: var(--white);
-}
-
-html[data-theme="dark"] .cm-s-lsradix div.CodeMirror-selected {
-  background: var(--current-line);
-}
-html[data-theme="dark"] .cm-s-lsradix .CodeMirror-line::selection,
-html[data-theme="dark"] .cm-s-lsradix .CodeMirror-line > span::selection,
-html[data-theme="dark"]
-  .cm-s-lsradix
-  .CodeMirror-line
-  > span
-  > span::selection {
-  background: var(--current-line);
-}
-html[data-theme="dark"] .cm-s-lsradix .CodeMirror-line::-moz-selection,
-html[data-theme="dark"] .cm-s-lsradix .CodeMirror-line > span::-moz-selection,
-html[data-theme="dark"]
-  .cm-s-lsradix
-  .CodeMirror-line
-  > span
-  > span::-moz-selection {
-  background: var(--current-line);
-}
-
-html[data-theme="dark"] .cm-s-lsradix .CodeMirror-gutters {
-  background-color: transparent;
-  border-right: 0px;
-}
-html[data-theme="dark"] .cm-s-lsradix .CodeMirror-guttermarker {
-  color: var(--white);
-}
-html[data-theme="dark"] .cm-s-lsradix .CodeMirror-guttermarker-subtle {
-  color: var(--grey);
-}
-html[data-theme="dark"] .cm-s-lsradix .CodeMirror-linenumber {
-  color: var(--grey);
-  background-color: var(--bg-alt);
-}
-
-html[data-theme="dark"] .cm-s-lsradix .CodeMirror-cursor {
-  border-left: solid thin var(--white);
-}
-
-html[data-theme="dark"] .cm-s-lsradix span.cm-comment {
-  color: var(--comment);
-}
-html[data-theme="dark"] .cm-s-lsradix span.cm-atom {
-  color: var(--violet);
-}
-html[data-theme="dark"] .cm-s-lsradix span.cm-number {
-  color: var(--violet);
-}
-html[data-theme="dark"] .cm-s-lsradix span.cm-comment.cm-attribute {
-  color: var(--green-hover);
-}
-html[data-theme="dark"] .cm-s-lsradix span.cm-comment.cm-def {
-  color: var(--yellow-hover);
-}
-html[data-theme="dark"] .cm-s-lsradix span.cm-comment.cm-tag {
-  color: var(--magenta-hover);
-}
-html[data-theme="dark"] .cm-s-lsradix span.cm-comment.cm-type {
-  color: var(--teal-hover);
-}
-
-html[data-theme="dark"] .cm-s-lsradix span.cm-property,
-.cm-s-lsradix span.cm-attribute {
-  color: var(--green);
-}
-
-html[data-theme="dark"] .cm-s-lsradix span.cm-keyword {
-  color: var(--magenta);
-}
-html[data-theme="dark"] .cm-s-lsradix span.cm-builtin {
-  color: var(--teal);
-}
-html[data-theme="dark"] .cm-s-lsradix span.cm-string {
-  color: var(--yellow);
-}
-html[data-theme="dark"] .cm-s-lsradix span.cm-variable {
-  color: var(--teal);
-}
-html[data-theme="dark"] .cm-s-lsradix span.cm-variable-2 {
-  color: var(--teal);
-}
-html[data-theme="dark"] .cm-s-lsradix span.cm-variable-3,
-.cm-s-lsradix span.cm-type {
-  color: var(--teal);
-}
-html[data-theme="dark"] .cm-s-lsradix span.cm-def {
-  color: var(--orange);
-}
-html[data-theme="dark"] .cm-s-lsradix span.cm-bracket {
-  color: var(--white);
-}
-html[data-theme="dark"] .cm-s-lsradix span.cm-tag {
-  color: var(--magenta);
-}
-html[data-theme="dark"] .cm-s-lsradix span.cm-header {
-  color: var(--violet);
-}
-html[data-theme="dark"] .cm-s-lsradix span.cm-link {
-  color: var(--violet);
-}
-html[data-theme="dark"] .cm-s-lsradix span.cm-error {
-  background: var(--magenta);
-  color: var(--white);
-}
-html[data-theme="dark"] .cm-s-lsradix span.cm-meta {
-  color: var(--green);
-}
-html[data-theme="dark"] .cm-s-lsradix span.cm-operator {
-  color: var(--blue);
-}
-html[data-theme="dark"] .cm-s-lsradix span.cm-qualifier {
-  color: var(--yellow);
-}
-
-html[data-theme="dark"] .cm-s-lsradix .CodeMirror-activeline-background {
-  background: var(--base3);
-}
-html[data-theme="dark"] .cm-s-lsradix .CodeMirror-matchingbracket {
-  text-decoration: underline;
-  color: var(--white) !important;
 }
